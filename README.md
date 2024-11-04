@@ -2,10 +2,10 @@
 Cooking and recipe generation.
 
 Team Members
-Yuxin Li (CC66li)
-Zihan Guo (Zhguo903)
-Yuqing Liu (LiuYuqing14)
-Kai Huang (KaiH0417)
+**Yuxin Li** (CC66li)  
+**Zihan Guo** (Zhguo903)  
+**Yuqing Liu** (LiuYuqing14)  
+**Kai Huang** (KaiH0417)
 
 - As a user, I want to be able to select ingredients from categories like veggies, meat, staple
 food, and kitchenware, so that I can generate a list of possible recipes based on my
