@@ -7,6 +7,7 @@ Cooking and recipe generation.
 **Yuqing Liu** (LiuYuqing14)  
 **Kai Huang** (KaiH0417)
 
+# User Stories
 - As a user, I want to be able to select ingredients from categories like veggies, meat, staple
 food, and kitchenware, so that I can generate a list of possible recipes based on my
 preferences. I want to see a clear list of the generated recipes and easy access to the tutorials.
