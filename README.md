@@ -2,6 +2,7 @@
 Cooking and recipe generation.
 
 Team Members
+
 **Yuxin Li** (CC66li)  
 **Zihan Guo** (Zhguo903)  
 **Yuqing Liu** (LiuYuqing14)  
