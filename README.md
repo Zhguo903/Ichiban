@@ -1,13 +1,23 @@
 # Ichiban
-Cooking and recipe generation.
+An useful tool for you to plan the daily healthy diet.
 
-# Team Members
-**Yuxin Li** (CC66li)  
-**Zihan Guo** (Zhguo903)  
-**Yuqing Liu** (LiuYuqing14)  
-**Kai Huang** (KaiH0417)
 
-# User Stories
+## Contributers
+**Yuxin Li**: CC66li | 
+
+**Zihan Guo**: Zhguo903 | zihansaria.guo@mail.utoronto.ca
+
+**Yuqing Liu**: LiuYuqing14 | yuq.liu@mail.utoronto.ca  
+
+**Kai Huang** KaiH0417 | 
+
+
+## Introduction
+The Ichiban is the cooking and recipe generation based on the users' health conditions.
+The system would restore the information of users, including the age, the height, the weight and the sex. Each usage would collect the food ingrediants and cookers then generate possible combinations of the meal with the calories suggestions. 
+
+
+## User Stories
 - As a user, I want to be able to select ingredients from categories like veggies, meat, staple
 food, and kitchenware, so that I can generate a list of possible recipes based on my
 preferences. I want to see a clear list of the generated recipes and easy access to the tutorials.
