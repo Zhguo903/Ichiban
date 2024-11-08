@@ -27,7 +27,7 @@ As a user, I want to be able to select ingredients from categories like veggies,
 
 - **Yuqing's Story - Special Usecase**<br />
 *Basic information:* Female, 19 years old, she has limited cookers at home. <br />
-*Story:* I just moved so I have limited cookware and some recipes require different cookers but I don't have any. It's bothering me so I want a tool that can recommend recipes by ingredients and type of cookware.
+*Story:* I just moved so I have limited cookware and some recipes require different cookers but I donnot have any. It is bothering me so I want a tool that can recommend recipes by ingredients and type of cookware.
 
 - **Yuxin's Story - Special Usecase**<br />
 *Basic information:* Female, 18 years old, she has very particular taste and eat very little at each meal.<br />
