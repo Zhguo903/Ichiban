@@ -13,7 +13,7 @@ An useful tool for you to plan the daily healthy diet.
 
 
 ## Introduction
-The Ichiban is the cooking and recipe generation based on the users' health conditions.
+The Ichiban is the cooking and recipe generation based on the users' health conditions.<br />
 The system would restore the information of users, including the age, the height, the weight and the sex. Each usage would collect the food ingrediants and cookers then generate possible combinations of the meal with the calories suggestions. 
 
 
@@ -31,8 +31,8 @@ As a user, I want to be able to select ingredients from categories like veggies,
 
 - **Yuxin's Story - Special Usecase**<br />
 *Basic information:* Female, 18 years old, she has very particular taste and eat very little at each meal.<br />
-*Story:* As a user, I want the recipe generator to show me a preview of the recipe list before committing to one. This will help me make an informed decision on which recipe is best suited for my needs.
+*Story:* I eat very little and donnot have a very good appetite. I am not interested in food and donnot know what I want to eat. I wish there was a tool that would give me a variety of different recipes to choose from based on the ingredients.
 
-- **Kai's Story -Special Usecase**<br />
+- **Kai's Story - Special Usecase**<br />
 *Basic information:* Male, 20 years old, he is skinny and no need to lose weight. He does not care about the calorie content of foods.<br />
-*Story:* As a user, I want the website to recommend recipes that align with my dietary needs based on my height and weight, calculating calories and basal metabolic rate to provide a tailored menu.
+*Story:* I usually order takeout food a lot, but this is not healthy. I wish there was a tool that could teach me how to cook at the same time while giving me a healthy diet.
