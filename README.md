@@ -2,7 +2,7 @@
 An useful tool for you to plan the daily healthy diet.
 
 
-## Contributers
+## Contributors
 **Yuxin Li**: CC66li | 
 
 **Zihan Guo**: Zhguo903 | zihansaria.guo@mail.utoronto.ca
