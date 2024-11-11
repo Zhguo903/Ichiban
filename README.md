@@ -9,7 +9,7 @@ An useful tool for you to plan the daily healthy diet.
 
 **Yuqing Liu**: LiuYuqing14 | yuq.liu@mail.utoronto.ca  
 
-**Kai Huang** KaiH0417 | 
+**Kai Huang** KaiH0417 | shkai.huang@mail.utoronto.ca
 
 
 ## Introduction
