@@ -14,7 +14,7 @@ An useful tool for you to plan the daily healthy diet.
 
 ## Introduction
 The Ichiban is the cooking and recipe generation based on the users' health conditions.<br />
-The system would restore the information of users, including the age, the height, the weight and the sex. Each usage would collect the food ingrediants and cookers then generate possible combinations of the meal with the calories suggestions. 
+The system would restore the information of users, including the age, the height, the weight and the sex. Each usage would collect the food ingredients and cookers then generate possible combinations of the meal with the calories suggestions. 
 
 
 ## User Stories
