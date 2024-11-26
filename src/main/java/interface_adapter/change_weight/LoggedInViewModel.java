@@ -1,4 +1,4 @@
-package interface_adapter.change_password;
+package interface_adapter.change_weight;
 
 import interface_adapter.ViewModel;
 
