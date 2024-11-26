@@ -28,7 +28,7 @@ The system would restore the information of users, including the age, the height
 
 - **Yuqing's Story - Special Usecase**<br />
   _Basic information:_ Female, 19 years old, she has limited ingredients at home. <br />
-  _Story:_ I go grocery shopping once a week so I have limited ingredients everyday while I also want to eat healthy. It is bothering me so I want a tool that can recommend healthy recipes by limited ingredients.
+  _Story:_ I go grocery shopping once a week causing a limited variety of ingredients everyday while I also want to eat healthy. It is bothering me so I want a tool that can recommend healthy recipes by limited ingredients.
 
 - **Yuxin's Story - Special Usecase**<br />
   _Basic information:_ Female, 18 years old, she has very particular taste and eat very little at each meal.<br />
