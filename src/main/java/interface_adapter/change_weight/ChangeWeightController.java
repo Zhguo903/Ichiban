@@ -1,26 +1,28 @@
 package interface_adapter.change_weight;
 
-import use_case.change_password.ChangePasswordInputBoundary;
-import use_case.change_password.ChangePasswordInputData;
+import use_case.change_weight.ChangeWeightInputBoundary;
+import use_case.change_weight.ChangeWeightInputData;
 
 /**
- * Controller for the Change Password Use Case.
+ * Controller for the Change Weight Use Case.
  */
 public class ChangeWeightController {
-    private final ChangePasswordInputBoundary userChangePasswordUseCaseInteractor;
+    private final ChangeWeightInputBoundary userChangeWeightUseCaseInteractor;
 
-    public ChangeWeightController(ChangePasswordInputBoundary userChangePasswordUseCaseInteractor) {
-        this.userChangePasswordUseCaseInteractor = userChangePasswordUseCaseInteractor;
+    public ChangeWeightController(ChangeWeightInputBoundary userChangeWeightUseCaseInteractor) {
+        this.userChangeWeightUseCaseInteractor = userChangeWeightUseCaseInteractor;
     }
 
     /**
-     * Executes the Change Password Use Case.
-     * @param password the new password
-     * @param username the user whose password to change
+     * Executes the Change Weight Use Case.
+     * @param weight the new weight
+     * @param username the user whose weight to change
      */
-    public void execute(String password, String username) {
-        final ChangePasswordInputData changePasswordInputData = new ChangePasswordInputData(username, password);
+    public void execute(String password, String username, float height, float weight,
+                        String gender, int age) {
+        final ChangeWeightInputData changeWeightInputData = new ChangeWeightInputData(username, password,
+                height, weight, gender, age);
 
-        userChangePasswordUseCaseInteractor.execute(changePasswordInputData);
+        userChangeWeightUseCaseInteractor.execute(changeWeightInputData);
     }
 }
