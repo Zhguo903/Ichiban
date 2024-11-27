@@ -31,6 +31,10 @@ public class DBUserDataAccessObject implements SignupUserDataAccessInterface,
     private static final String USERNAME = "username";
     private static final String PASSWORD = "password";
     private static final String MESSAGE = "message";
+    private static final double HEIGHT = 0.0;
+    private static final double WEIGHT = 0.0;
+    private static final String GENDER = "male";
+    private static final int AGE = 0;
     private final UserFactory userFactory;
 
     public DBUserDataAccessObject(UserFactory userFactory) {
@@ -55,8 +59,10 @@ public class DBUserDataAccessObject implements SignupUserDataAccessInterface,
                 final JSONObject userJSONObject = responseBody.getJSONObject("user");
                 final String name = userJSONObject.getString(USERNAME);
                 final String password = userJSONObject.getString(PASSWORD);
+                final double height = HEIGHT;
 
-                return userFactory.create(name, password);
+
+                return userFactory.create(name, password, );
             }
             else {
                 throw new RuntimeException(responseBody.getString(MESSAGE));

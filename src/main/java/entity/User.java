@@ -17,4 +17,27 @@ public interface User {
      */
     String getPassword();
 
+    /**
+     * Returns the height of the user.
+     * @return the height of the user.
+     */
+    float getHeight();
+
+    /**
+     * Returns the weight of the user.
+     * @return the weight of the user.
+     */
+    float getWeight();
+
+    /**
+     * Returns the gender of the user.
+     * @return the gender of the user.
+     */
+    String getGender();
+
+    /**
+     * Returns the age of the user.
+     * @return the age of the user.
+     */
+    int getAge();
 }
