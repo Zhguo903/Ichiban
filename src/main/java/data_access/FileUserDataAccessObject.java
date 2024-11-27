@@ -13,6 +13,7 @@ import java.util.Map;
 import entity.User;
 import entity.UserFactory;
 import use_case.change_password.ChangePasswordUserDataAccessInterface;
+import use_case.change_weight.ChangeWeightUserDataAccessInterface;
 import use_case.login.LoginUserDataAccessInterface;
 import use_case.signup.SignupUserDataAccessInterface;
 
@@ -20,10 +21,10 @@ import use_case.signup.SignupUserDataAccessInterface;
  * DAO for user data implemented using a File to persist the data.
  */
 public class FileUserDataAccessObject implements SignupUserDataAccessInterface,
-                                                 LoginUserDataAccessInterface,
+                                                 LoginUserDataAccessInterface, ChangeWeightUserDataAccessInterface,
                                                  ChangePasswordUserDataAccessInterface {
 
-    private static final String HEADER = "username,password";
+    private static final String HEADER = "username,password, weight, height, gender, age";
 
     private final File csvFile;
     private final Map<String, Integer> headers = new LinkedHashMap<>();
@@ -35,6 +36,10 @@ public class FileUserDataAccessObject implements SignupUserDataAccessInterface,
         csvFile = new File(csvPath);
         headers.put("username", 0);
         headers.put("password", 1);
+        headers.put("weight", 2);
+        headers.put("height", 3);
+        headers.put("gender", 4);
+        headers.put("age", 5);
 
         if (csvFile.length() == 0) {
             save();
@@ -53,7 +58,12 @@ public class FileUserDataAccessObject implements SignupUserDataAccessInterface,
                     final String[] col = row.split(",");
                     final String username = String.valueOf(col[headers.get("username")]);
                     final String password = String.valueOf(col[headers.get("password")]);
-                    final User user = userFactory.create(username, password);
+                    final String weight = String.valueOf(col[headers.get("weight")]);
+                    final String height = String.valueOf(col[headers.get("height")]);
+                    final String gender = String.valueOf(col[headers.get("gender")]);
+                    final String age = String.valueOf(col[headers.get("age")]);
+
+                    final User user = userFactory.create(username, password, weight, height, gender, age);
                     accounts.put(username, user);
                 }
             }
@@ -68,8 +78,9 @@ public class FileUserDataAccessObject implements SignupUserDataAccessInterface,
             writer.newLine();
 
             for (User user : accounts.values()) {
-                final String line = String.format("%s,%s",
-                        user.getName(), user.getPassword());
+                final String line = String.format("%s,%s,%s,%s,%s,%s",
+                        user.getName(), user.getPassword(), user.getWeight(),
+                        user.getHeight(), user.getGender(), user.getAge());
                 writer.write(line);
                 writer.newLine();
             }
@@ -111,6 +122,12 @@ public class FileUserDataAccessObject implements SignupUserDataAccessInterface,
     @Override
     public void changePassword(User user) {
         // Replace the User object in the map
+        accounts.put(user.getName(), user);
+        save();
+    }
+
+    @Override
+    public void changeWeight(User user) {
         accounts.put(user.getName(), user);
         save();
     }

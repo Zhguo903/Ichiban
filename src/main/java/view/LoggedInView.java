@@ -26,7 +26,7 @@ public class LoggedInView extends JPanel implements PropertyChangeListener {
     private final String viewName = "logged in";
     private final LoggedInViewModel loggedInViewModel;
     private final JLabel passwordErrorField = new JLabel();
-    private ChangeWeightController changePasswordController;
+    private ChangeWeightController changeWeightController;
     private LogoutController logoutController;
 
     private final JLabel username;
