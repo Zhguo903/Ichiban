@@ -9,6 +9,10 @@ public class SignupState {
     private String password = "";
     private String passwordError;
     private String repeatPassword = "";
+    private float height = 0;
+    private float weight = 0;
+    private String gender = "";
+    private int age = 0;
     private String repeatPasswordError;
 
     public String getUsername() {
@@ -57,6 +61,38 @@ public class SignupState {
 
     public void setRepeatPasswordError(String repeatPasswordError) {
         this.repeatPasswordError = repeatPasswordError;
+    }
+
+    public float getHeight() {
+        return height;
+    }
+
+    public void setHeight(float height) {
+        this.height = height;
+    }
+
+    public float getWeight() {
+        return weight;
+    }
+
+    public void setWeight(float weight) {
+        this.weight = weight;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     @Override

@@ -13,9 +13,10 @@ import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
-import interface_adapter.change_password.ChangeWeightController;
 import interface_adapter.change_password.LoggedInState;
 import interface_adapter.change_password.LoggedInViewModel;
+import interface_adapter.change_weight.ChangeWeightController;
+import interface_adapter.change_password.ChangePasswordController;
 import interface_adapter.logout.LogoutController;
 
 /**
@@ -27,6 +28,7 @@ public class LoggedInView extends JPanel implements PropertyChangeListener {
     private final LoggedInViewModel loggedInViewModel;
     private final JLabel passwordErrorField = new JLabel();
     private ChangeWeightController changeWeightController;
+    private ChangePasswordController changePasswordController;
     private LogoutController logoutController;
 
     private final JLabel username;
@@ -35,6 +37,7 @@ public class LoggedInView extends JPanel implements PropertyChangeListener {
 
     private final JTextField passwordInputField = new JTextField(15);
     private final JButton changePassword;
+    private final JButton changeWeight;
 
     public LoggedInView(LoggedInViewModel loggedInViewModel) {
         this.loggedInViewModel = loggedInViewModel;
@@ -55,6 +58,9 @@ public class LoggedInView extends JPanel implements PropertyChangeListener {
 
         changePassword = new JButton("Change Password");
         buttons.add(changePassword);
+
+        changeWeight = new JButton("Change Weight");
+        buttons.add(changeWeight);
 
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
@@ -82,15 +88,39 @@ public class LoggedInView extends JPanel implements PropertyChangeListener {
             }
         });
 
+        JButton finalChangePassword = changePassword;
         changePassword.addActionListener(
                 // This creates an anonymous subclass of ActionListener and instantiates it.
                 evt -> {
-                    if (evt.getSource().equals(changePassword)) {
+                    if (evt.getSource().equals(finalChangePassword)) {
                         final LoggedInState currentState = loggedInViewModel.getState();
 
                         this.changePasswordController.execute(
                                 currentState.getUsername(),
-                                currentState.getPassword()
+                                currentState.getPassword(),
+                                currentState.getHeight(),
+                                currentState.getWeight(),
+                                currentState.getGender(),
+                                currentState.getAge()
+                        );
+                    }
+                }
+        );
+
+        JButton finalChangeWeight = changeWeight;
+        changeWeight.addActionListener(
+                // This creates an anonymous subclass of ActionListener and instantiates it.
+                evt -> {
+                    if (evt.getSource().equals(finalChangeWeight)) {
+                        final LoggedInState currentState = loggedInViewModel.getState();
+
+                        this.changeWeightController.execute(
+                                currentState.getUsername(),
+                                currentState.getPassword(),
+                                currentState.getHeight(),
+                                currentState.getWeight(),
+                                currentState.getGender(),
+                                currentState.getAge()
                         );
                     }
                 }
@@ -133,11 +163,16 @@ public class LoggedInView extends JPanel implements PropertyChangeListener {
         return viewName;
     }
 
-    public void setChangePasswordController(ChangeWeightController changePasswordController) {
-        this.changePasswordController = changePasswordController;
+    public void setChangeWeightController(ChangeWeightController changeWeightController) {
+        this.changeWeightController = changeWeightController;
     }
 
     public void setLogoutController(LogoutController logoutController) {
         // save the logout controller in the instance variable.
+        this.logoutController = logoutController;
+    }
+
+    public void setChangePasswordController(ChangePasswordController changePasswordController) {
+        this.changePasswordController = changePasswordController;
     }
 }
