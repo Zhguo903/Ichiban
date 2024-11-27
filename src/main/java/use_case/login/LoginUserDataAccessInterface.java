@@ -35,7 +35,31 @@ public interface LoginUserDataAccessInterface {
 
     /**
      * Sets the username indicating who is the current user of the application.
-     * @param username the new current username; null to indicate that no one is currently logged into the application.
+     * @param name the new current height; null to indicate that no one is currently logged into the application.
      */
-    void setCurrentUsername(String username);
+    void setCurrentUsername(String name);
+
+    /**
+     * Sets the height indicating who is the current user of the application.
+     * @param height the new current height; null to indicate that no one is currently logged into the application.
+     */
+    void setCurrentHeight(float height);
+
+    /**
+     * Sets the weight indicating who is the current user of the application.
+     * @param weight the new current weight; null to indicate that no one is currently logged into the application.
+     */
+    void setCurrentWeight(float weight);
+
+    /**
+     * Sets the gender indicating who is the current user of the application.
+     * @param gender the new current gender; null to indicate that no one is currently logged into the application.
+     */
+    void setCurrentGender(String gender);
+
+    /**
+     * Sets the age indicating who is the current user of the application.
+     * @param age the new current username; null to indicate that no one is currently logged into the application.
+     */
+    void setCurrentAge(int age);
 }

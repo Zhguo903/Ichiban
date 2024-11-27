@@ -14,7 +14,6 @@ import interface_adapter.change_password.ChangePasswordController;
 import interface_adapter.change_password.ChangePasswordPresenter;
 import interface_adapter.change_password.LoggedInViewModel;
 import interface_adapter.change_weight.ChangeWeightController;
-import interface_adapter.change_weight.ChangeWeightPresenter;
 import interface_adapter.login.LoginController;
 import interface_adapter.login.LoginPresenter;
 import interface_adapter.login.LoginViewModel;
@@ -147,8 +146,8 @@ public class AppBuilder {
         final ChangePasswordInputBoundary changePasswordInteractor =
                 new ChangePasswordInteractor(userDataAccessObject, changePasswordOutputBoundary, userFactory);
 
-        final ChangeWeightController changePasswordController =
-                new ChangeWeightController(changePasswordInteractor);
+        final ChangePasswordController changePasswordController =
+                new ChangePasswordController(changePasswordInteractor);
         loggedInView.setChangePasswordController(changePasswordController);
         return this;
     }

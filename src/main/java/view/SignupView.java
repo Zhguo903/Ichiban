@@ -30,6 +30,10 @@ public class SignupView extends JPanel implements ActionListener, PropertyChange
     private final JTextField usernameInputField = new JTextField(15);
     private final JPasswordField passwordInputField = new JPasswordField(15);
     private final JPasswordField repeatPasswordInputField = new JPasswordField(15);
+    private final JPasswordField heightField = new JPasswordField(15);
+    private final JPasswordField weightField = new JPasswordField(15);
+    private final JPasswordField genderField = new JPasswordField(15);
+    private final JPasswordField ageField = new JPasswordField(5);
     private SignupController signupController;
 
     private final JButton signUp;
@@ -49,6 +53,14 @@ public class SignupView extends JPanel implements ActionListener, PropertyChange
                 new JLabel(SignupViewModel.PASSWORD_LABEL), passwordInputField);
         final LabelTextPanel repeatPasswordInfo = new LabelTextPanel(
                 new JLabel(SignupViewModel.REPEAT_PASSWORD_LABEL), repeatPasswordInputField);
+        final LabelTextPanel heightInfo = new LabelTextPanel(
+                new JLabel(SignupViewModel.HEIGHT_LABEL), heightField);
+        final LabelTextPanel weightInfo = new LabelTextPanel(
+                new JLabel(SignupViewModel.WEIGHT_LABEL), weightField);
+        final LabelTextPanel genderInfo = new LabelTextPanel(
+                new JLabel(SignupViewModel.GENDER_LABEL), genderField);
+        final LabelTextPanel ageInfo = new LabelTextPanel(
+                new JLabel(SignupViewModel.AGE_LABEL), ageField);
 
         final JPanel buttons = new JPanel();
         toLogin = new JButton(SignupViewModel.TO_LOGIN_BUTTON_LABEL);
@@ -68,8 +80,12 @@ public class SignupView extends JPanel implements ActionListener, PropertyChange
                             signupController.execute(
                                     currentState.getUsername(),
                                     currentState.getPassword(),
-                                    currentState.getRepeatPassword()
-                            );
+                                    currentState.getRepeatPassword(),
+                                    currentState.getHeight(),
+                                    currentState.getWeight(),
+                                    currentState.getGender(),
+                                    currentState.getAge()
+                                    );
                         }
                     }
                 }
@@ -88,6 +104,10 @@ public class SignupView extends JPanel implements ActionListener, PropertyChange
         addUsernameListener();
         addPasswordListener();
         addRepeatPasswordListener();
+        addHeightListener();
+        addWeightListener();
+        addGenderListener();
+        addAgeListener();
 
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
@@ -95,7 +115,137 @@ public class SignupView extends JPanel implements ActionListener, PropertyChange
         this.add(usernameInfo);
         this.add(passwordInfo);
         this.add(repeatPasswordInfo);
+        this.add(heightInfo);
+        this.add(weightInfo);
+        this.add(genderInfo);
+        this.add(ageInfo);
         this.add(buttons);
+    }
+
+    private void addAgeListener() {
+        ageField.getDocument().addDocumentListener(new DocumentListener() {
+
+            private void documentListenerHelper() {
+                final SignupState currentState = signupViewModel.getState();
+                String text = ageField.getText();
+                try {
+                    // Convert the text to an integer
+                    int value = Integer.parseInt(text);
+                    currentState.setAge(value);
+                    signupViewModel.setState(currentState);
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid input. Please enter a valid integer.");
+                }
+
+            }
+
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                documentListenerHelper();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                documentListenerHelper();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                documentListenerHelper();
+            }
+        });
+    }
+
+    private void addGenderListener() {
+        genderField.getDocument().addDocumentListener(new DocumentListener() {
+
+            private void documentListenerHelper() {
+                final SignupState currentState = signupViewModel.getState();
+                currentState.setGender(genderField.getText());
+                signupViewModel.setState(currentState);
+            }
+
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                documentListenerHelper();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                documentListenerHelper();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                documentListenerHelper();
+            }
+        });
+    }
+
+    private void addWeightListener() {
+        weightField.getDocument().addDocumentListener(new DocumentListener() {
+
+            private void documentListenerHelper() {
+                final SignupState currentState = signupViewModel.getState();
+                String text = weightField.getText();
+                try {
+                    // Convert the text to an integer
+                    float value = Float.parseFloat(text);
+                    currentState.setWeight(value);
+                    signupViewModel.setState(currentState);
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid input. Please enter a valid float.");
+                }
+            }
+
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                documentListenerHelper();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                documentListenerHelper();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                documentListenerHelper();
+            }
+        });
+    }
+
+    private void addHeightListener() {
+        heightField.getDocument().addDocumentListener(new DocumentListener() {
+
+            private void documentListenerHelper() {
+                final SignupState currentState = signupViewModel.getState();
+                String text = heightField.getText();
+                try {
+                    // Convert the text to an integer
+                    float value = Float.parseFloat(text);
+                    currentState.setHeight(value);
+                    signupViewModel.setState(currentState);
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid input. Please enter a valid float.");
+                }
+            }
+
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                documentListenerHelper();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                documentListenerHelper();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                documentListenerHelper();
+            }
+        });
     }
 
     private void addUsernameListener() {
@@ -178,7 +328,8 @@ public class SignupView extends JPanel implements ActionListener, PropertyChange
 
     @Override
     public void actionPerformed(ActionEvent evt) {
-        JOptionPane.showMessageDialog(this, "Cancel not implemented yet.");
+        JOptionPane.showMessageDialog(this,
+                "Cancel not implemented yet.");
     }
 
     @Override
