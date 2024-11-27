@@ -14,6 +14,7 @@ public interface UserFactory {
      * @param age the age of user
      * @return the new user
      */
-    User create(String name, String password, float height, float weight, String gender, int age);
+    User create(String name, String password, String height,
+                String weight, String gender, String age);
 
 }
