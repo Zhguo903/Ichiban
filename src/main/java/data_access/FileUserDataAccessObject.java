@@ -21,7 +21,8 @@ import use_case.signup.SignupUserDataAccessInterface;
  * DAO for user data implemented using a File to persist the data.
  */
 public class FileUserDataAccessObject implements SignupUserDataAccessInterface,
-                                                 LoginUserDataAccessInterface, ChangeWeightUserDataAccessInterface,
+                                                 LoginUserDataAccessInterface,
+                                                 ChangeWeightUserDataAccessInterface,
                                                  ChangePasswordUserDataAccessInterface {
 
     private static final String HEADER = "username,password, weight, height, gender, age";
