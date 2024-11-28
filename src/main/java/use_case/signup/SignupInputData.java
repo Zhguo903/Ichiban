@@ -39,7 +39,7 @@ public class SignupInputData {
 
     float getHeight() {return height;}
 
-    float getWeight() {return weight;}
+    float getWeight() { return weight;}
 
     String getGender() {return gender;}
 

@@ -66,7 +66,8 @@ public class DBUserDataAccessObject implements SignupUserDataAccessInterface,
                 final String gender = userJSONObject.getString(GENDER);
                 final String age = userJSONObject.getString(String.valueOf(AGE));
 
-                return userFactory.create(name, password, height, weight, gender, age);
+                return userFactory.create(name, password, Float.parseFloat(height),
+                        Float.parseFloat(weight), gender, Integer.parseInt(age));
             }
             else {
                 throw new RuntimeException(responseBody.getString(MESSAGE));
