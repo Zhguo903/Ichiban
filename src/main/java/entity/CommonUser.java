@@ -7,13 +7,13 @@ public class CommonUser implements User {
 
     private final String name;
     private final String password;
-    private final String height;
-    private final String weight;
+    private final float height;
+    private final float weight;
     private final String gender;
-    private final String age;
+    private final int age;
 
-    public CommonUser(String name, String password, String height,
-                      String weight, String gender, String age) {
+    public CommonUser(String name, String password, float height,
+                      float weight, String gender, int age) {
         this.name = name;
         this.password = password;
         this.height = height;
@@ -33,14 +33,14 @@ public class CommonUser implements User {
     }
 
     @Override
-    public float getHeight() {return Float.parseFloat(height);}
+    public float getHeight() {return height;}
 
     @Override
-    public float getWeight() {return Float.parseFloat(weight);}
+    public float getWeight() {return weight;}
 
     @Override
     public String getGender() {return gender;}
 
     @Override
-    public int getAge() {return Integer.parseInt(age);}
+    public int getAge() {return age;}
 }

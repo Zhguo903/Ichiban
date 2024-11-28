@@ -64,7 +64,8 @@ public class FileUserDataAccessObject implements SignupUserDataAccessInterface,
                     final String gender = String.valueOf(col[headers.get("gender")]);
                     final String age = String.valueOf(col[headers.get("age")]);
 
-                    final User user = userFactory.create(username, password, weight, height, gender, age);
+                    final User user = userFactory.create(username, password, Float.parseFloat(height),
+                            Float.parseFloat(weight), gender, Integer.parseInt(age));
                     accounts.put(username, user);
                 }
             }
